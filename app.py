@@ -1,5 +1,6 @@
 import streamlit as st
 import pickle
+import gzip
 import pandas as pd
                             
 def recommend(movie):
@@ -14,13 +15,18 @@ def recommend(movie):
         recommended_movie_names.append(movies.iloc[i[0]].title)
 
     return recommended_movie_names
-    
+
+def decompress_pickle(input_pkl_gz):
+    with gzip.open(input_pkl_gz, 'rb') as f:
+        return pickle.load(f)
+
 st.title("Movie Recommendation System")
 
 movie_dict = pickle.load(open('movies.pkl', 'rb'))
 movies = pd.DataFrame(movie_dict)
 
-similarity = pickle.load(open('similarity.pkl', 'rb'))
+# similarity = pickle.load(open('similarity_com.pkl.gz', 'rb'))
+similarity = decompress_pickle("similarity.pkl.gz")
 # E:\SEM VII\Project 1\similarity.pkl
 selected_movie = st.selectbox(
     "Select a movie to get recommendations", 
