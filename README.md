@@ -1,5 +1,11 @@
 # 🎬 Movie Recommender System 🍿
 
+---
+
+## 🌐 **[🚀 Try the Live App Here!](https://nisharg-modi-28-movierecommendarsystem-app-9kunez.streamlit.app/)**
+
+---
+
 Welcome to the **Movie Recommender System** project!  
 This application leverages machine learning to suggest movies tailored to your preferences, making it easier for you to discover new favorites.
 
